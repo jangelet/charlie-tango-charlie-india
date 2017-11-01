@@ -1,4 +1,4 @@
-/**
+package algos; /**
  * Created by JANG3LET on 10/30/17.
  */
 

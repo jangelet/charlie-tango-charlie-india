@@ -9,6 +9,25 @@ import java.util.*;
 public class DupeKiller <E extends Comparable<E>>{
 
     public static LinkedList dupeKiller(LinkedList ll){
+        HashMap<Object, Integer> counter =  new HashMap<Object, Integer>();
+
+        for(int i = 0; i < ll.size(); i++){
+            counter.put(ll.get(i), counter.containsKey(ll.get(i)) ?
+                    (counter.get(ll.get(i)) + 1) : 1);
+        }
+
+        return ll;
+
+    }
+
+
+
+/* NAIVE IMPLEMENTATION\
+   public static LinkedList dupeKiller(LinkedList ll){
+          if(ll.size()<=1){
+
+            return ll;
+        }
         LinkedList ll2 = ll;
 
         for(int i = 0; i < ll.size(); i++){
@@ -23,6 +42,7 @@ public class DupeKiller <E extends Comparable<E>>{
 
         return ll;
     }
+*/
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList<Integer>();
